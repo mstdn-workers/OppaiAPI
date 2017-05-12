@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:MyContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:MstdnAPI;assembly=MstdnAPI"
+             x:Class="MstdnAPI.TopPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="viewLabelBase" TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="VerticalOptions" Value="Center" />
+      </Style>
+      <Style x:Key="viewLabel" TargetType="Label" BasedOn="{StaticResource viewLabelBase}">
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <StackLayout
+    Orientation="Vertical"
+    VerticalOptions="FillAndExpand"
+    BackgroundColor="Black"
+      >
+      <Image x:Name="ViewImg1" Source="{d:ImageResource MstdnAPI.Images.merlion_icon.png}" />
+      <Label Text="おっぱいトゥートＪＫ"
+             Style="{StaticResource viewLabel}"
+        />
+    </StackLayout>
+  </ContentPage.Content>
+</d:MyContentPage>

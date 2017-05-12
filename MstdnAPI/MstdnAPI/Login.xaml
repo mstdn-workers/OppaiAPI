@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<d:MyContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:MstdnAPI;assembly=MstdnAPI"
+             x:Class="MstdnAPI.Login">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="buttonBase" TargetType="Button">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <!--       <Setter Property="WidthRequest" Value="320" /> -->
+      </Style>
+      <Style x:Key="viewLabelBase" TargetType="Label">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="VerticalOptions" Value="Center" />
+      </Style>
+
+      <Style x:Key="viewLabel" TargetType="Label" BasedOn="{StaticResource viewLabelBase}">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+      </Style>
+
+      <Style x:Key="viewEntry" TargetType="Entry">
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="White"/>
+        <!--       <Setter Property="WidthRequest" Value="320" /> -->
+      </Style>
+      <Style x:Key="viewButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+        <Setter Property="BackgroundColor" Value="SkyBlue"/>
+        <Setter Property="HeightRequest" Value="80" />
+      </Style>
+      <Style x:Key="viewSetButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
+<!--        <Setter Property="HeightRequest" Value="80" /> -->
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <StackLayout
+    Orientation="Vertical"
+    VerticalOptions="FillAndExpand"
+    BackgroundColor="Black"
+      >
+        <Label Text="ログインＩＤ"
+               Style="{StaticResource viewLabel}"
+        />
+        <Entry x:Name="User" Text="{Binding USER_ID}"
+               Style="{StaticResource viewEntry}"
+               Keyboard="Email"
+        />
+
+        <Label Text="パスワード"
+               Style="{StaticResource viewLabel}"
+        />
+        <Entry x:Name="Password" Text="{Binding PASSWORD}"
+               Style="{StaticResource viewEntry}"
+               IsPassword = "true"
+        />
+
+      <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Center">
+        <Button x:Name="Submit" Text="保存"
+                Style="{StaticResource viewButton}"
+        />
+        <Button x:Name="Cancel" Text="キャンセル"
+                Style="{StaticResource viewButton}"
+        />
+        <Button x:Name="Reset" Text="元に戻す"
+                Style="{StaticResource viewButton}"
+        />
+
+      </StackLayout>
+
+    </StackLayout>
+  </ContentPage.Content>
+</d:MyContentPage>
