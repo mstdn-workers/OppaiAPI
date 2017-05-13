@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SQLite.Net;
+﻿using SQLite.Net;
 
 
 namespace MstdnAPI {
     public interface ISQLite {
         SQLiteConnection GetConnection();
+    }
+
+    public interface IToast {
+        void Show(string message);
     }
 }

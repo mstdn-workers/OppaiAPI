@@ -9,7 +9,6 @@
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontSize" Value="20" />
         <Setter Property="BackgroundColor" Value="SkyBlue"/>
-        <!--       <Setter Property="WidthRequest" Value="320" /> -->
       </Style>
       <Style x:Key="viewLabelBase" TargetType="Label">
         <Setter Property="TextColor" Value="White" />
@@ -26,9 +25,8 @@
         <Setter Property="FontSize" Value="20" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="BackgroundColor" Value="White"/>
-        <Setter Property="HeightRequest" Value="180" />
+        <Setter Property="HeightRequest" Value="240" />
         <Setter Property="FontSize" Value="20" />
-        <!--       <Setter Property="WidthRequest" Value="320" /> -->
       </Style>
       <Style x:Key="viewButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
         <Setter Property="HeightRequest" Value="80" />
@@ -37,7 +35,6 @@
       <Style x:Key="viewSetButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="WidthRequest" Value="320" />
-        <!--        <Setter Property="HeightRequest" Value="80" /> -->
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
@@ -56,7 +53,7 @@
         <Button x:Name="Oppai" Text="おっぱい"
                 Style="{StaticResource viewButton}"
         />
-        <Button x:Name="Mar" Text="マー"
+        <Button x:Name="Mer" Text="マー"
                 Style="{StaticResource viewButton}"
         />
         <Button x:Name="Toot" Text="トゥート"

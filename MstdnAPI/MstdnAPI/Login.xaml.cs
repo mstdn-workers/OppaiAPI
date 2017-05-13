@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -31,9 +27,11 @@ namespace MstdnAPI {
 
             try {
             } catch (Exception exception) {
+                ErrorProc(exception);
             }
         }
 
+        // ＤＢ更新
         private void UpdateDb() {
             try {
                 AccessSQLite db = new AccessSQLite();
@@ -47,11 +45,12 @@ namespace MstdnAPI {
             }
         }
 
+        // ボタン押下時処理
         private async void submitButton(object sender, EventArgs e) {
             try {
                 if (moveFlg) return;
                 moveFlg = true;
-                var rtn = await DisplayAlert("確認", "設定を保存します", DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
+                var rtn = await DisplayAlert(DefaultValue.DIALOG_TITLE_CONFILM, DefaultValue.DIALOG_MSG_COMMIT, DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
                 if (!rtn) {
                     moveFlg = false;
                     return;
@@ -68,7 +67,7 @@ namespace MstdnAPI {
             try {
                 if (moveFlg) return;
                 moveFlg = true;
-                var rtn = await DisplayAlert("確認", "編集中の設定を破棄して戻ります", DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
+                var rtn = await DisplayAlert(DefaultValue.DIALOG_TITLE_CONFILM, DefaultValue.DIALOG_MSG_CANCEL, DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
                 if (!rtn) {
                     moveFlg = false;
                     return;
@@ -84,7 +83,7 @@ namespace MstdnAPI {
             try {
                 if (moveFlg) return;
                 moveFlg = true;
-                var rtn = await DisplayAlert("確認", "編集中の設定を破棄します", DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
+                var rtn = await DisplayAlert(DefaultValue.DIALOG_TITLE_CONFILM, DefaultValue.DIALOG_MSG_CREAR, DefaultValue.MSG_OK, DefaultValue.MSG_CANCEL);
                 if (!rtn) {
                     moveFlg = false;
                     return;

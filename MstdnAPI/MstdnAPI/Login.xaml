@@ -9,7 +9,6 @@
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="FontSize" Value="20" />
         <Setter Property="HorizontalOptions" Value="Fill" />
-        <!--       <Setter Property="WidthRequest" Value="320" /> -->
       </Style>
       <Style x:Key="viewLabelBase" TargetType="Label">
         <Setter Property="TextColor" Value="White" />
@@ -26,14 +25,12 @@
         <Setter Property="FontSize" Value="20" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="BackgroundColor" Value="White"/>
-        <!--       <Setter Property="WidthRequest" Value="320" /> -->
       </Style>
       <Style x:Key="viewButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
         <Setter Property="BackgroundColor" Value="SkyBlue"/>
         <Setter Property="HeightRequest" Value="80" />
       </Style>
       <Style x:Key="viewSetButton" TargetType="Button" BasedOn="{StaticResource buttonBase}">
-<!--        <Setter Property="HeightRequest" Value="80" /> -->
       </Style>
     </ResourceDictionary>
   </ContentPage.Resources>
@@ -43,7 +40,7 @@
     VerticalOptions="FillAndExpand"
     BackgroundColor="Black"
       >
-        <Label Text="ログインＩＤ"
+        <Label Text="ログインＩＤ（メールアドレス）"
                Style="{StaticResource viewLabel}"
         />
         <Entry x:Name="User" Text="{Binding USER_ID}"

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
 using SQLite.Net;
 using Xamarin.Forms;
 
@@ -15,6 +12,8 @@ namespace MstdnAPI {
             try {
                 _db = DependencyService.Get<ISQLite>().GetConnection();
                 _db.CreateTable<UserData>();
+                _db.CreateTable<AppKey>();
+                _db.CreateTable<AccessToken>();
             } catch (Exception exception) {
                 throw exception;
             }
@@ -86,6 +85,37 @@ namespace MstdnAPI {
             }
         }
 
+        // AccessTokenデータの抽出
+        public IEnumerable<AccessToken> GetAccessTokenMaster() {
+            lock (Locker) {
+                try {
+                    return _db.Table<AccessToken>();
+                } catch (Exception exception) {
+                    throw exception;
+                }
+            }
+        }
 
+        // AccessTokenデータの挿入
+        public int InsertAccessTokenMaster(AccessToken item) {
+            lock (Locker) {
+                try {
+                    return _db.Insert(item);
+                } catch (Exception exception) {
+                    throw exception;
+                }
+            }
+        }
+
+        // AccessTokenデータの削除
+        public int DeleteAccessTokenMaster() {
+            lock (Locker) {
+                try {
+                    return _db.DeleteAll<AccessToken>();
+                } catch (Exception exception) {
+                    throw exception;
+                }
+            }
+        }
     }
 }
